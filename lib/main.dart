@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Planet App',
         home: SplasScreen(),
-        theme: AppTheme(selectColor: 3).theme(),
+        theme: AppTheme(selectColor: 5).theme(),
       ),
     );
   }

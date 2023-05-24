@@ -1,6 +1,6 @@
 
 
-enum NamePlanet{Earth, Mars, Mercuty}
+enum NamePlanet{Earth, Mars, Moon, Jupiter}
 
 abstract class FeaturesPlanets{
 
