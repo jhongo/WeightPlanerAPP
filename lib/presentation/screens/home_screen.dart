@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:planet_app/presentation/providers/home_provider.dart';
+import 'package:planet_app/presentation/screens/calculate_screen.dart';
+import 'package:planet_app/presentation/screens/information_screen.dart';
+import 'package:planet_app/presentation/screens/more_screen.dart';
 import 'package:planet_app/presentation/widgets/shared/nav_options_items.dart';
 import 'package:provider/provider.dart';
 
@@ -25,11 +28,16 @@ class HomeScreen extends StatelessWidget {
             child: Stack(
               children: [
                 PageView(
-                  children: [],
+                  physics: NeverScrollableScrollPhysics(),
+                  children:const[
+                    CalculateScreen(),
+                    InformartionScreen(), 
+                    MoreScreen()
+                  ],
                 ),
 
                 const Positioned(
-                  bottom: 0,
+                  bottom: 10,
                   left: 0,
                   right: 0,
                   child: NavOptionsItems()
