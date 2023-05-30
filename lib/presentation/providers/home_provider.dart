@@ -56,7 +56,7 @@ class MoonProvider extends ChangeNotifier implements FeaturesPlanets {
   double? weightPerson = 0;
  
   @override
-  final NamePlanet namePlanet = NamePlanet.Mars;
+  final NamePlanet namePlanet = NamePlanet.Moon;
 
   @override
   Future<void> calculateWeight(double massPerson, double weightMore ) async{
@@ -79,7 +79,7 @@ class JupiterProvider extends ChangeNotifier implements FeaturesPlanets {
   double? weightPerson = 0;
  
   @override
-  final NamePlanet namePlanet = NamePlanet.Mars;
+  final NamePlanet namePlanet = NamePlanet.Jupiter;
 
   @override
   Future<void> calculateWeight(double massPerson, double weightMore ) async{

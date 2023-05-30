@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planet_app/presentation/providers/home_provider.dart';
+import 'package:planet_app/presentation/widgets/shared/nav_options_items.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,67 +14,37 @@ class HomeScreen extends StatelessWidget {
 
     final earth = context.watch<HomeProvider>();
     final mars = context.watch<MarsProvider>();
+    final moon = context.watch<MoonProvider>();
+    final jupiter = context.watch<JupiterProvider>();
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Planets Weight',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: colors.secondary,
-        ),
         body: Container(
-            width: widht,
-            height: height,
-            child: Column(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: decorationHome(),
+            child: Stack(
               children: [
-                Container(
-                  width: widht,
-                  height: height * 0.1,
-                  color: colors.secondary,
-                  child: Row(
-                    children: [
-                      const Text('Ingresar tu masa'), 
-                      Expanded(
-                        child: Container(
-                          width: widht,
-                          height: height,
-                          child:  TextFormField(
-                            onFieldSubmitted: (value) {
-                              earth.calculateWeight(double.parse(value), 0 );
-                              mars.calculateWeight(double.parse(value), earth.weightPerson!);
-                              print(value);
-                            },
-                        ),
-                        ),
-                      )
-                    ],
-                  ),
+                PageView(
+                  children: [],
                 ),
 
-                Row(
-                  children: [
-                    Text('${earth.namePlanet.name}'),
-                    const SizedBox(width: 20,),
-                    Text('${earth.gravityPlanet}'),
-                    const SizedBox(width: 20,),
-                    Text('${earth.massPerson}'),
-                    const SizedBox(width: 20,),
-                    Text('${earth.weightPerson}'),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text('${mars.namePlanet.name}'),
-                    const SizedBox(width: 20,),
-                    Text('${mars.gravityPlanet}'),
-                    const SizedBox(width: 20,),
-                    Text('${mars.massPerson}'),
-                    const SizedBox(width: 20,),
-                    Text('${mars.weightPerson}'),
-                  ],
-                ),
+                const Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: NavOptionsItems()
+                  )
               ],
-            )));
+            ),
+            ));
+  }
+
+  BoxDecoration decorationHome() {
+    return const BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(
+                    'assets/imgs/back_home.jpg',
+                  )));
   }
 }

@@ -18,7 +18,13 @@ class MyApp extends StatelessWidget {
           ),
         ChangeNotifierProvider(
           create:(context) => MarsProvider(), 
-          )
+          ),
+        ChangeNotifierProvider(
+          create:(context) => MoonProvider(), 
+          ),
+        ChangeNotifierProvider(
+          create:(context) => JupiterProvider(), 
+          ),
       ],
       child: MaterialApp( 
         debugShowCheckedModeBanner: false,
