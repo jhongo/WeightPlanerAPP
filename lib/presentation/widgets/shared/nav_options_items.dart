@@ -30,7 +30,9 @@ class NavOptionsItems extends StatelessWidget {
               final menuitems = navOptions[index];
               return GestureDetector(
                 onTap: () => print('$index'),
-                child: OptionName()
+                child: OptionName(
+                  navOpc: menuitems,
+                  )
                 
                 );
           },
@@ -39,6 +41,33 @@ class NavOptionsItems extends StatelessWidget {
           ),
         )
       ),
+    );
+  }
+}
+
+class OptionName extends StatelessWidget {
+
+  final NavOptions navOpc;
+
+  const OptionName({super.key,required this.navOpc});
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      padding: EdgeInsets.all(10),
+      duration: Duration(milliseconds: 750),
+      // width: 40,
+      // height: 40,
+      margin:const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+      color: Colors.white,
+        borderRadius: BorderRadius.circular(20)
+      ),
+      child: Row(
+        children: [
+          Icon(navOpc.icon),
+          Text(navOpc.name)
+        ],
+      )
     );
   }
 }
