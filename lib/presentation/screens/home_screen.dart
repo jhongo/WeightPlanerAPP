@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         body: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: decorationHome(),
+            // decoration: decorationHome(),
             child: Stack(
               children: [
                 PageView(
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
 
-                const Positioned(
+                Positioned(
                   bottom: 10,
                   left: 0,
                   right: 0,
@@ -47,12 +47,12 @@ class HomeScreen extends StatelessWidget {
             ));
   }
 
-  BoxDecoration decorationHome() {
-    return const BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(
-                    'assets/imgs/back_home.jpg',
-                  )));
-  }
+  // BoxDecoration decorationHome() {
+  //   return const BoxDecoration(
+  //             image: DecorationImage(
+  //                 fit: BoxFit.fill,
+  //                 image: AssetImage(
+  //                   'assets/imgs/back_home.jpg',
+  //                 )));
+  // }
 }

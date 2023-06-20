@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:planet_app/domain/entities/nav_options.dart';
+import 'package:planet_app/presentation/widgets/shared/option_item.dart';
 
 
 class NavOptionsItems extends StatelessWidget {
-  const NavOptionsItems({super.key});
 
-  
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,22 @@ class NavOptionsItems extends StatelessWidget {
             ),
           borderRadius: BorderRadius.circular(50)
         ),
-        child: ListView.builder(
-          itemBuilder:(context, index) {
-            
-          },) ,
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List.generate(navOptions.length,(index) {
+              final menuitems = navOptions[index];
+              return GestureDetector(
+                onTap: () => print('$index'),
+                child: OptionName()
+                
+                );
+          },
+        
+          
+          ),
+        )
       ),
     );
   }
-} 
+}
+
+
