@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp( 
         debugShowCheckedModeBanner: false,
         title: 'Planet App',
-        home: SplasScreen(),
+        home:const SplasScreen(),
         theme: AppTheme(selectColor: 5).theme(),
       ),
     );

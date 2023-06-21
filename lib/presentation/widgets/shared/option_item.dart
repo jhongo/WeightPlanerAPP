@@ -1,31 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planet_app/domain/entities/nav_options.dart';
 import 'package:planet_app/presentation/providers/navigator_provider.dart';
 import 'package:provider/provider.dart';
 
 class OptionName extends StatelessWidget {
 
-  final NavOptions navOpc;
+  final NavOptions itemNav;
+  const OptionName({super.key,required this.itemNav});
 
-  const OptionName({super.key,required this.navOpc});
   @override
   Widget build(BuildContext context) {
-    final nav = context.watch<NavigatorProvider>();
+    final navigationProvider = context.watch<NavigatorProvider>();
     return AnimatedContainer(
-      
-      padding: EdgeInsets.all(10),
-      duration: Duration(milliseconds: 750),
-      // width: double.infinity,
-      // height: 40,
-      margin:const EdgeInsets.all(10),
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 7),
+      duration: const Duration(milliseconds: 750),
+      height: 40,
       decoration: BoxDecoration(
-      color: (navOpc.index == nav.initIndex) ? Colors.indigo : Colors.white,
-        borderRadius: BorderRadius.circular(20)
+      color: (itemNav.index == navigationProvider.initIndex) ? Color(0xFF90e0ef).withOpacity(0.4) : Colors.transparent ,
+      borderRadius: BorderRadius.circular(50)
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(navOpc.icon),
-          Text(navOpc.name)
+          FaIcon(itemNav.icon,
+          color: Colors.white,
+          size:(itemNav.index == navigationProvider.initIndex) ? 23 : 20,
+          ),
+          if(itemNav.index == navigationProvider.initIndex)
+          const SizedBox(width: 5,),
+          if(itemNav.index == navigationProvider.initIndex)
+          Text(itemNav.name, style: TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.w800),)
+        
         ],
       )
     );

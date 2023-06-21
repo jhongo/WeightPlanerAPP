@@ -7,11 +7,12 @@ import 'package:provider/provider.dart';
 
 class NavOptionsItems extends StatelessWidget {
 
+  const NavOptionsItems({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    final navScroll = context.watch<NavigatorProvider>();
+    final navigationProvider = context.watch<NavigatorProvider>();
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -25,21 +26,15 @@ class NavOptionsItems extends StatelessWidget {
             colors: [
               Color(0xFF1f3e5a),
               Color(0xFF1c253c)
-            ]
-            ),
+            ]),
           borderRadius: BorderRadius.circular(50)
         ),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(navOptions.length,(index) {
-              final menuitems = navOptions[index];
+              final itemsNav = navOptions[index];
               return GestureDetector(
-                onTap: (){
-                  navScroll.changePage(index);
-                },
-                child: OptionName(
-                  navOpc: menuitems,
-                  )
-                
+                onTap: () => navigationProvider.changePage(index),
+                child: OptionName(itemNav: itemsNav)
                 );
           },
         

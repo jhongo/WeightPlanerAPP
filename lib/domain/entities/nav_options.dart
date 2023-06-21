@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NavOptions { 
 
@@ -15,7 +16,7 @@ class NavOptions {
 } 
 
  final navOptions =  <NavOptions>[
-  NavOptions(name: 'Calculate', index: 0, icon:Icons.calculate,),
-  NavOptions(name: 'Information', index: 1, icon: Icons.info,  ),
-  NavOptions(name:'More', index: 2, icon: Icons.more, )
+  NavOptions(name: 'Calculate', index: 0, icon:FontAwesomeIcons.weightScale),
+  NavOptions(name: 'Information', index: 1, icon: FontAwesomeIcons.earthAmericas  ),
+  NavOptions(name:'More', index: 2, icon: FontAwesomeIcons.infinity, )
 ];
