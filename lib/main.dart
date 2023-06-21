@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:planet_app/config/theme/app_theme.dart';
 import 'package:planet_app/presentation/providers/home_provider.dart';
+import 'package:planet_app/presentation/providers/navigator_provider.dart';
 import 'package:planet_app/presentation/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create:(context) => JupiterProvider(), 
           ),
+        ChangeNotifierProvider(
+          create:(context) => NavigatorProvider(),
+          )
       ],
       child: MaterialApp( 
         debugShowCheckedModeBanner: false,

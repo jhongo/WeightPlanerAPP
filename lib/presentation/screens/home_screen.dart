@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planet_app/presentation/providers/home_provider.dart';
+import 'package:planet_app/presentation/providers/navigator_provider.dart';
 import 'package:planet_app/presentation/screens/calculate_screen.dart';
 import 'package:planet_app/presentation/screens/information_screen.dart';
 import 'package:planet_app/presentation/screens/more_screen.dart';
@@ -20,6 +21,8 @@ class HomeScreen extends StatelessWidget {
     final moon = context.watch<MoonProvider>();
     final jupiter = context.watch<JupiterProvider>();
 
+    final navPro = context.watch<NavigatorProvider>();
+
     return Scaffold(
         body: Container(
             width: double.infinity,
@@ -28,6 +31,7 @@ class HomeScreen extends StatelessWidget {
             child: Stack(
               children: [
                 PageView(
+                  controller: navPro.controller,
                   physics: NeverScrollableScrollPhysics(),
                   children:const[
                     CalculateScreen(),

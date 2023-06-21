@@ -15,7 +15,7 @@ class NavOptions {
 } 
 
  final navOptions =  <NavOptions>[
-  NavOptions(name: 'Calculate', index: 1, icon:Icons.calculate,),
-  NavOptions(name: 'Information', index: 2, icon: Icons.info,  ),
-  NavOptions(name:'More', index: 3, icon: Icons.more, )
+  NavOptions(name: 'Calculate', index: 0, icon:Icons.calculate,),
+  NavOptions(name: 'Information', index: 1, icon: Icons.info,  ),
+  NavOptions(name:'More', index: 2, icon: Icons.more, )
 ];
