@@ -7,11 +7,20 @@ class CalculateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return const Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Center(
-         child: Text('CalculateScreen'),
-      ),
+    return Scaffold(
+      backgroundColor: Color(0xFF210535),
+      body: Stack(
+        children: [
+          Image.asset('assets/imgs/astronaut-in-space.png')
+        ],
+      )
     );
   }
 }
+
+// HEX CODES: 
+// #210535
+// #6768ab
+// #7b337d
+// #c874b2
+// #f5d5e0
