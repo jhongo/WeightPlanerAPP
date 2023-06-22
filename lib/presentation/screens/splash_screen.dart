@@ -13,9 +13,32 @@ class _SplasScreenState extends State<SplasScreen> {
     await Future.delayed(Duration(seconds: 4));
 
     if (mounted) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => HomeScreen(),
-      ));
+      Navigator.of(context).pushReplacement(
+        // PageRouteBuilder(
+        //   transitionDuration: Duration(seconds: 2),
+        //   transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        //     final curveAnimation = CurvedAnimation(parent: animation, curve: Curves.easeInOut);
+        //     return FadeTransition(
+        //       opacity: Tween<double>(begin: 0.8, end: 1.0).animate(curveAnimation),
+        //       child: child,
+        //       );
+        //   },
+        //   pageBuilder: (context, animation, secondaryAnimation) {
+        //     return HomeScreen();
+        //   },
+        //   )
+        PageRouteBuilder(
+          transitionDuration: Duration(milliseconds: 950),
+          pageBuilder:(context, animation, secondaryAnimation) {
+            final curveAnimation = CurvedAnimation(parent: animation, curve: Curves.ease);
+            return FadeTransition(
+              opacity: Tween<double>(begin: 0, end: 1).animate(curveAnimation),
+              child:const HomeScreen(),
+              );
+          },
+          
+          )
+      );
     }
   }
 
