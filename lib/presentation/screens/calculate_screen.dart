@@ -41,18 +41,20 @@ class HeaderPainter extends CustomPainter{
   
   final paint = Paint();
   paint.color = Color(0xFFfefae0);
-  paint.style = PaintingStyle.stroke;
+  paint.style = PaintingStyle.fill;
   paint.strokeWidth = 5;
 
   final path = Path();
-  // path.lin
+  path.lineTo(0, size.height * 0.2); 
+  path.quadraticBezierTo(size.width *0.4 , size.height * 0.3 ,size.width , 0 );
     
 canvas.drawPath(path, paint);
 }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
-
+  bool shouldRepaint(covariant CustomPainter oldDelegate){
+    return true;
+  }
 }
 
 
