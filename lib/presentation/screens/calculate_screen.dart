@@ -46,7 +46,7 @@ class HeaderPainter extends CustomPainter{
 
   final path = Path();
   path.lineTo(0, size.height * 0.2); 
-  path.quadraticBezierTo(size.width *0.4 , size.height * 0.3 ,size.width , 0 );
+  path.quadraticBezierTo(size.width *0.5 , size.height * 0.3 ,size.width , 0 );
     
 canvas.drawPath(path, paint);
 }
