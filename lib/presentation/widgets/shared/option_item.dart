@@ -25,13 +25,13 @@ class OptionName extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FaIcon(itemNav.icon,
-          color: Colors.white,
+          color:(itemNav.index == navigationProvider.initIndex) ? Colors.white : Color(0xFF8a95a5),
           size:(itemNav.index == navigationProvider.initIndex) ? 23 : 20,
           ),
           if(itemNav.index == navigationProvider.initIndex)
           const SizedBox(width: 5,),
           if(itemNav.index == navigationProvider.initIndex)
-          Text(itemNav.name, style: TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.w800),)
+          Text(itemNav.name, style: TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.w800, fontFamily: 'SpaceAge' ),)
         
         ],
       )
